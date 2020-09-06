@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>中安信诚企业管理（武汉）有限公司</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../swiper/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<script src="../js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body style="height: 100%;">
+		<div class="headx flxs">
+			<div class="headdiv max1024">
+				<div class="logodiv">
+					<img src="../img/logo.png" oncontextmenu="return false;" onselectstart="return false;" />
+					<img src="../img/logotitle.png" oncontextmenu="return false;" onselectstart="return false;" />
+				</div>
+				<div class="shape">
+					<a class="fs14" href="index.html">返回首页 <img src="../img/jiant.png"/></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="flexindexc max1024 mahd">
+			<div class="wihdiv mahd">
+				<div class="max325 mauto">
+					<div class="guhs">
+						<a class="fs24 tecen  titlxas" href="javascript:void(0)">注册</a>
+						<a class="fs24 tecen aclick titlxas " href="javascript:void(0)">登录</a>
+					</div>
+					<div class="">
+						<div class="dengls">
+							<p class="fs14 jr">手机号</p>
+							<div class="inpuntsd">
+								<img src="../img/ihone.png" />
+								<input type="tel" name="" id="" value="" class="inpuntsbn fs14 phone" placeholder="请输入手机号" />
+							</div>
+							<p class="fs14 jr">手机验证</p>
+							<div class="inpuntsd">
+								<img src="../img/yzm.png" />
+								<input type="text" name="" id="" value="" class="inpuntsbn fs14 yzm" placeholder="请输入验证码" />
+								<a href="javascript:void(0)" class="fs14 hqyzm">获取验证码</a>
+							</div>
+							<p class="fs14 jr">密码</p>
+							<div class="inpuntsd">
+								<img src="../img/mm.png" />
+								<input type="password" name="" id="" value="" class="inpuntsbn fs14 mm" placeholder="请输入密码" />
+							</div>
+							<div class="oruse fs14">
+								<b>OR USE</b>
+							</div>
+							<p class="fs14 gjjw">注册即表示同意<a href="javascript:void(0)" class="fs14 jbnd">《中安信网服务使用协议》</a></p>
+							<a href="javascript:void(0)" class="fs18 qdxg ljzc">立即注册</a>
+							<div class="tisk max325">
+								<!--提示框-->
+								用户名或密码不正确
+							</div>
+						</div>
+						<div class="dengls aclick">
+							<p class="fs14 jr">手机号</p>
+							<div class="inpuntsd">
+								<img src="../img/ihone.png" />
+								<input type="tel" name="" id="" value="" class="inpuntsbn fs14 phones" placeholder="请输入手机号" />
+							</div>
+							<p class="fs14 jr">密码</p>
+							<div class="inpuntsd">
+								<img src="../img/mm.png" />
+								<input type="password" name="" id="" value="" class="inpuntsbn fs14 mms" placeholder="请输入密码" />
+							</div>
+							<a href="password.html" class="fs14 wjvns">忘记密码？</a>
+							<div class="oruse fs14">
+								<b>OR USE</b>
+							</div>
+							<a href="javascript:void(0)" class="fs18 qdxg ljdl">立即登录</a>
+							<div class="tisk max325">
+								<!--提示框-->
+								用户名或密码不正确
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="tixfo">
+
+		</div>
+		<p class="fs14 cow max1024 tixfodiv">&nbsp;&nbsp;&nbsp;Copyright © 2019.Company name All rights reserved</p>
+		<div class="wejjv">
+			<div class="swiper-container" style="height: 100%;width: 100%;">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="xfs" style="background-image: url(../img/login.jpg);"></div>
+					</div>
+				</div>
+			</div>
+			<a class="bannav max1024"></a>
+			<div class="max1024 bannavdiv2 cow fs18">
+				<a href="index.html" class="cow">English&nbsp;&nbsp;&nbsp;&nbsp;</a>|
+				<a href="index.html" class="cow">&nbsp;&nbsp;&nbsp;&nbsp;Chinese</a>
+			</div>
+		</div>
+
+		<script src="../js/style.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			tab(".guhs .titlxas",".dengls","aclick","aclick");			
+			
+			
+			var ss = true;
+			$('.hqyzm').click(function() {
+				if(ss) {
+
+					var count = 120;
+					var phone = $(".phone").val(); //手机号码  
+					var reg_phone = /1\d{10}/;
+					if(!reg_phone.test(phone)) { //验证手机是否符合格式
+						jgk("请输入正确手机号");
+						return false;
+					}
+					ss = false;
+					//开始计时  
+					$(".hqyzm").attr('disabled', 'disabled');
+					$(".hqyzm").html("倒计时" + count + "秒");
+					var timer = setInterval(function() {
+						count--;
+						$(".hqyzm").html("倒计时" + count + "秒");
+						if(count == 0) {
+							ss = true;
+							clearInterval(timer);
+							$(".hqyzm").attr("disabled", false); //启用按钮  
+							$(".hqyzm").html("获取验证码");
+							code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效 
+						}
+					}, 1000);
+				}
+			});
+			
+			
+			$(".ljzc").click(function(){
+				var phone= $(".phone").val();
+				var mm= $(".mm").val();
+				var yzm= $(".yzm").val();
+				if(phone==0||mm==0){
+					jgk("请正确填写账号和密码")
+				}else if(yzm==0){
+					jgk("请填写手机验证码");
+				}
+			})
+			
+			$(".ljdl").click(function(){
+				var phones= $(".phones").val();
+				var mms= $(".mms").val();
+				if(phones==0||mms==0){
+					jgk("请输入账号和密码")
+				}
+			})
+		</script>
+	</body>
+
+</html>
